@@ -5,11 +5,13 @@
  */
 package tpimpal.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author skday
  */
-public abstract class Akun {
+public abstract class Akun implements Serializable{
     private String nama;
     private String username;
     private String password;

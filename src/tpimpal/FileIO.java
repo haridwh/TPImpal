@@ -11,13 +11,15 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import tpimpal.model.Kategori;
+import tpimpal.model.Mobil;
 
 /**
  *
  * @author skday
  */
 public class FileIO {
-    public void saveMobil(ArrayList list){
+    public void saveMobil(ArrayList<Mobil> list){
          try{
             FileOutputStream fOS = new FileOutputStream("mobil.dat");
             ObjectOutputStream oOS = new ObjectOutputStream(fOS);
@@ -29,12 +31,12 @@ public class FileIO {
         }
     }
     
-    public ArrayList loadMobil(){
-        ArrayList list;
+    public ArrayList<Mobil> loadMobil(){
+        ArrayList<Mobil> list;
         try {
             FileInputStream fIN = new FileInputStream("mobil.dat");
             ObjectInputStream oIS = new ObjectInputStream(fIN);
-            list = (ArrayList) oIS.readObject();
+            list = (ArrayList<Mobil>) oIS.readObject();
             oIS.close();
             fIN.close();
         } catch (IOException io) {
@@ -47,7 +49,7 @@ public class FileIO {
         return list;
     }
     
-    public void saveKategori(ArrayList list){
+    public void saveKategori(ArrayList<Kategori> list){
          try{
             FileOutputStream fOS = new FileOutputStream("kategori.dat");
             ObjectOutputStream oOS = new ObjectOutputStream(fOS);
@@ -59,12 +61,12 @@ public class FileIO {
         }
     }
     
-    public ArrayList loadKategori(){
-        ArrayList list;
+    public ArrayList<Kategori> loadKategori(){
+        ArrayList<Kategori> list;
         try {
             FileInputStream fIN = new FileInputStream("kategori.dat");
             ObjectInputStream oIS = new ObjectInputStream(fIN);
-            list = (ArrayList) oIS.readObject();
+            list = (ArrayList<Kategori>) oIS.readObject();
             oIS.close();
             fIN.close();
         } catch (IOException io) {

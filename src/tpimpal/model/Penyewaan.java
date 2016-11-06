@@ -5,11 +5,13 @@
  */
 package tpimpal.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author skday
  */
-public class Penyewaan {
+public class Penyewaan implements Serializable{
     private StrategiPenyewaan jenisPenyewaan;
     private Mobil mobil;
     private double totalBiaya;

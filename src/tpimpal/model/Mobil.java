@@ -5,11 +5,13 @@
  */
 package tpimpal.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author skday
  */
-public class Mobil {
+public class Mobil implements Serializable{
     private String nama;
     private Kategori kategori;
     private long harga;

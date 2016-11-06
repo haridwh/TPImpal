@@ -55,6 +55,14 @@ public class LoginView extends javax.swing.JFrame {
         TextUsername.addActionListener(e);
     }
 
+    public JButton getBtnLogin() {
+        return BtnLogin;
+    }
+
+    public JButton getBtnRegister() {
+        return BtnRegister;
+    }
+
     /**
      * Creates new form LoginView
      */

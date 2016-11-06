@@ -14,10 +14,13 @@ import java.util.ArrayList;
 public class Member extends Akun {
     
     private String noMember;
-    private ArrayList<Penyewaan> penyewa;
+    private ArrayList<Penyewaan> penyewaan;
+    private int i=1;
     
     public Member(String nama, String username, String password) {
         super(nama, username, password);
+        this.noMember = "MEM-"+i;
+        i++;
     }
     
 }

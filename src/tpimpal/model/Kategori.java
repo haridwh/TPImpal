@@ -5,11 +5,13 @@
  */
 package tpimpal.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author skday
  */
-public class Kategori {
+public class Kategori implements Serializable{
     private String nama;
     private int jumlahKursi;
 

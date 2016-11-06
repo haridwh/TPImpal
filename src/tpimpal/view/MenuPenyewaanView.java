@@ -6,10 +6,13 @@
 package tpimpal.view;
 
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JRadioButton;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import tpimpal.model.Mobil;
 
 /**
  *
@@ -90,8 +93,17 @@ public class MenuPenyewaanView extends javax.swing.JFrame {
         WP4.addActionListener(e);
     }
     
-    
-    
+    public void addRowToTable(ArrayList<Mobil> listMobil){
+        DefaultTableModel table = (DefaultTableModel)  TabelPenyewaan.getModel();
+        Object rowData[] = new Object[4];
+        for (int i = 0; i< listMobil.size();i++){
+            rowData[0] = listMobil.get(i).getNama();
+            rowData[1] = listMobil.get(i).getKategori().getNama();
+            rowData[2] = listMobil.get(i).getKategori().getJumlahKursi();
+            rowData[3] = listMobil.get(i).getHarga();
+            table.addRow(rowData);
+        }
+    }
     
 
     /**
@@ -99,6 +111,7 @@ public class MenuPenyewaanView extends javax.swing.JFrame {
      */
     public MenuPenyewaanView() {
         initComponents();
+//        addRowToTable(listMobil);
     }
 
     /**
@@ -236,7 +249,15 @@ public class MenuPenyewaanView extends javax.swing.JFrame {
             new String [] {
                 "Nama", "Kategori", "Jumlah Kendaraan", "Harga Sewa"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(TabelPenyewaan);
 
         jLabel3.setText("Lama Waktu Penyewaan");
@@ -309,13 +330,12 @@ public class MenuPenyewaanView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(8, 8, 8))
                     .addGroup(layout.createSequentialGroup()

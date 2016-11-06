@@ -14,11 +14,23 @@ import tpimpal.model.Mobil;
  * @author User
  */
 public class Aplikasi {
-    private ArrayList<Member> listMember;
-    private ArrayList<Kategori> listKategori;
-    private ArrayList<Mobil> listMobil;
+    private ArrayList<Member> listMember = new ArrayList<Member>();
+    private ArrayList<Kategori> listKategori = new ArrayList<Kategori>();
+    private ArrayList<Mobil> listMobil = new ArrayList<Mobil>();
+
+    public ArrayList<Member> getListMember() {
+        return listMember;
+    }
+
+    public ArrayList<Kategori> getListKategori() {
+        return listKategori;
+    }
+
+    public ArrayList<Mobil> getListMobil() {
+        return listMobil;
+    }
     
-    private FileIO fileIO;
+    private FileIO fileIO = new FileIO();
     
     public void createAkun (Member member){
         listMember.add(member);
@@ -45,6 +57,6 @@ public class Aplikasi {
     }
     
     public void saveKategori(){
-        fileIO.saveKategori(listMobil);
+        fileIO.saveKategori(listKategori);
     }
 }
