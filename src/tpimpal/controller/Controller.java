@@ -98,16 +98,16 @@ public class Controller implements ActionListener{
             loginView.addListener(this);
         }else if (source.equals(menuUtama.getBtnPenyewaan())) {
             menuUtama.dispose();
-            System.out.println(app.getListMobil().get(0).getNama());
             menuPenyewaanView = new MenuPenyewaanView();
             menuPenyewaanView.setVisible(true);
             menuPenyewaanView.addListener(this);
-            JOptionPane.showMessageDialog(menuPenyewaanView, "Gak tau kenapa pass load data \n java.lang.ClassNotFoundException: model.Mobil terus");
+            JOptionPane.showMessageDialog(menuPenyewaanView, "Gak tau kenapa pass load data \n java.lang.ClassNotFoundException: model.XXX terus");
         }else if (source.equals(menuUtama.getBtnRiwayatPenyewaan())) {
             menuUtama.dispose();
             riwayatPenyewaan = new RiwayatPenyewaan();
             riwayatPenyewaan.setVisible(true);
             riwayatPenyewaan.addListener(this);
+            JOptionPane.showMessageDialog(menuPenyewaanView, "Gak tau kenapa pass load data \n java.lang.ClassNotFoundException: model.XXX terus");
         }else if (source.equals(menuPenyewaanView.getBtnKembali())) {
             menuPenyewaanView.dispose();
             menuUtama = new MenuUtama();
