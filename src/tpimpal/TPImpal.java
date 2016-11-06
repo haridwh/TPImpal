@@ -7,7 +7,8 @@ package tpimpal;
 
 import java.util.ArrayList;
 import tpimpal.controller.Controller;
-import tpimpal.model.Member;
+import tpimpal.model.Kategori;
+import tpimpal.model.Mobil;
 
 /**
  *
@@ -20,8 +21,12 @@ public class TPImpal {
      */
     public static void main(String[] args) {
         Aplikasi app = new Aplikasi();
+        ArrayList<Mobil> listMobil = new ArrayList<>();
         app.loadKategori();
         app.loadMobil();
+        for (int i=0; i<app.getListMobil().size();i++){
+            System.out.println(app.getListMobil().get(i).getNama());
+        }
         new Controller(app);
     }
     

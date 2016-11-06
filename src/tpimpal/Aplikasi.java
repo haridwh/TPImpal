@@ -5,6 +5,7 @@
 package tpimpal;
 
 import java.util.ArrayList;
+import tpimpal.model.FileIO;
 import tpimpal.model.Kategori;
 import tpimpal.model.Member;
 import tpimpal.model.Mobil;
@@ -17,6 +18,8 @@ public class Aplikasi {
     private ArrayList<Member> listMember = new ArrayList<Member>();
     private ArrayList<Kategori> listKategori = new ArrayList<Kategori>();
     private ArrayList<Mobil> listMobil = new ArrayList<Mobil>();
+    
+    private FileIO fileIO = new FileIO();
 
     public ArrayList<Member> getListMember() {
         return listMember;
@@ -29,8 +32,20 @@ public class Aplikasi {
     public ArrayList<Mobil> getListMobil() {
         return listMobil;
     }
+
+    public void setListMember(ArrayList<Member> listMember) {
+        this.listMember = listMember;
+    }
+
+    public void setListKategori(ArrayList<Kategori> listKategori) {
+        this.listKategori = listKategori;
+    }
+
+    public void setListMobil(ArrayList<Mobil> listMobil) {
+        this.listMobil = listMobil;
+    }
+
     
-    private FileIO fileIO = new FileIO();
     
     public void createAkun (Member member){
         listMember.add(member);

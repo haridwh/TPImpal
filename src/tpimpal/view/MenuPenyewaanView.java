@@ -111,8 +111,12 @@ public class MenuPenyewaanView extends javax.swing.JFrame {
      */
     public MenuPenyewaanView() {
         initComponents();
-//        addRowToTable(listMobil);
     }
+    
+//    public MenuPenyewaanView(ArrayList<Mobil> listMobil) {
+//        initComponents();
+//        addRowToTable(listMobil);
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.

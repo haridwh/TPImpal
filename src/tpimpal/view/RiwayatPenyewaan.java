@@ -6,8 +6,13 @@
 package tpimpal.view;
 
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import tpimpal.model.Member;
+import tpimpal.model.Mobil;
+import tpimpal.model.Penyewaan;
 
 /**
  *
@@ -21,6 +26,11 @@ public class RiwayatPenyewaan extends javax.swing.JFrame {
     public RiwayatPenyewaan() {
         initComponents();
     }
+    
+//    public RiwayatPenyewaan(Member member) {
+//        initComponents();
+//        addRowToTable(member);
+//    }
 
     public JTable getTableriwayat() {
         return Tableriwayat;
@@ -33,6 +43,21 @@ public class RiwayatPenyewaan extends javax.swing.JFrame {
      public void addListener (ActionListener e){
         Btnkembali.addActionListener(e);
      }
+     
+     public void addRowToTable(Member member){
+        DefaultTableModel table = (DefaultTableModel)  Tableriwayat.getModel();
+        Object rowData[] = new Object[4];
+        ArrayList<Penyewaan> listPenyewaan = new ArrayList<>();
+        listPenyewaan = member.getPenyewaan();
+        for (int i = 0; i< listPenyewaan.size();i++){
+            rowData[0] = member.getNoMember();
+            rowData[1] = member.getPenyewaan().get(i).getMobil().getNama();
+            rowData[2] = member.getPenyewaan().get(i).getMobil().getKategori().getNama();
+            rowData[3] = member.getPenyewaan().get(i).getMobil().getKategori().getJumlahKursi();
+            rowData[4] = member.getPenyewaan().get(i).getTotalBiaya();
+            table.addRow(rowData);
+        }
+    }
      
     /**
      * This method is called from within the constructor to initialize the form.
@@ -100,7 +125,7 @@ public class RiwayatPenyewaan extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Btnkembali)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();

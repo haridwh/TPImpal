@@ -22,5 +22,21 @@ public class Member extends Akun {
         this.noMember = "MEM-"+i;
         i++;
     }
+
+    public String getNoMember() {
+        return noMember;
+    }
+
+    public void setNoMember(String noMember) {
+        this.noMember = noMember;
+    }
+
+    public ArrayList<Penyewaan> getPenyewaan() {
+        return penyewaan;
+    }
+
+    public void setPenyewaan(ArrayList<Penyewaan> penyewaan) {
+        this.penyewaan = penyewaan;
+    }
     
 }

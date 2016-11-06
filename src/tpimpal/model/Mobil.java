@@ -21,28 +21,28 @@ public class Mobil implements Serializable{
         this.kategori = kategori;
         this.harga = harga;
     }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
     
     public String getNama() {
         return nama;
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
+    public void setKategori(Kategori kategori) {
+        this.kategori = kategori;
     }
-
+    
     public Kategori getKategori() {
         return kategori;
     }
 
-    public void setKategori(Kategori kategori) {
-        this.kategori = kategori;
-    }
-
-    public long getHarga() {
-        return harga;
-    }
-
     public void setHarga(long harga) {
         this.harga = harga;
+    }
+    
+    public long getHarga() {
+        return harga;
     }
 }

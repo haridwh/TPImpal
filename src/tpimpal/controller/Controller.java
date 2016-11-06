@@ -98,6 +98,7 @@ public class Controller implements ActionListener{
             loginView.addListener(this);
         }else if (source.equals(menuUtama.getBtnPenyewaan())) {
             menuUtama.dispose();
+            System.out.println(app.getListMobil().get(0).getNama());
             menuPenyewaanView = new MenuPenyewaanView();
             menuPenyewaanView.setVisible(true);
             menuPenyewaanView.addListener(this);

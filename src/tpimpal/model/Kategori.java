@@ -20,19 +20,19 @@ public class Kategori implements Serializable{
         this.jumlahKursi = jumlahKursi;
     }
     
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+    
     public String getNama() {
         return nama;
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
-    }
-
-    public int getJumlahKursi() {
-        return jumlahKursi;
-    }
-
     public void setJumlahKursi(int jumlahKursi) {
         this.jumlahKursi = jumlahKursi;
+    }
+    
+    public int getJumlahKursi() {
+        return jumlahKursi;
     }
 }
