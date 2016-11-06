@@ -22,12 +22,7 @@ public class TPImpal {
         Aplikasi app = new Aplikasi();
         app.loadKategori();
         app.loadMobil();
-        System.out.println("Hello World");
-        for (int i = 0; i < app.getListMobil().size(); i++) {
-            System.out.println(app.getListMobil().get(i).getNama());
-            System.out.println(app.getListMobil().get(i).getHarga());
-        }
-        //new Controller(app);
+        new Controller(app);
     }
     
 }

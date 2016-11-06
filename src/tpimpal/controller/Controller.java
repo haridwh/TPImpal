@@ -101,6 +101,24 @@ public class Controller implements ActionListener{
             menuPenyewaanView = new MenuPenyewaanView();
             menuPenyewaanView.setVisible(true);
             menuPenyewaanView.addListener(this);
+            JOptionPane.showMessageDialog(menuPenyewaanView, "Gak tau kenapa pass load data \n java.lang.ClassNotFoundException: model.Mobil terus");
+        }else if (source.equals(menuUtama.getBtnRiwayatPenyewaan())) {
+            menuUtama.dispose();
+            riwayatPenyewaan = new RiwayatPenyewaan();
+            riwayatPenyewaan.setVisible(true);
+            riwayatPenyewaan.addListener(this);
+        }else if (source.equals(menuPenyewaanView.getBtnKembali())) {
+            menuPenyewaanView.dispose();
+            menuUtama = new MenuUtama();
+            menuUtama.setVisible(true);
+            menuUtama.addListener(this);
+        }else if (source.equals(menuPenyewaanView.getBtnSewa())) {
+            JOptionPane.showMessageDialog(menuPenyewaanView, "Belum ada soalnya gak bisa load data");
+        }  else if (source.equals(riwayatPenyewaan.getBtnkembali())) {
+            riwayatPenyewaan.dispose();
+            menuUtama = new MenuUtama();
+            menuUtama.setVisible(true);
+            menuUtama.addListener(this);
         }
     }
     

@@ -62,11 +62,11 @@ public class FileIO {
     }
     
     public ArrayList<Kategori> loadKategori(){
-        ArrayList<Kategori> list;
+        ArrayList list;
         try {
             FileInputStream fIN = new FileInputStream("kategori.dat");
             ObjectInputStream oIS = new ObjectInputStream(fIN);
-            list = (ArrayList<Kategori>) oIS.readObject();
+            list = (ArrayList) oIS.readObject();
             oIS.close();
             fIN.close();
         } catch (IOException io) {
