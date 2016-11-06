@@ -43,7 +43,7 @@ public class MenuUtama extends javax.swing.JFrame {
         BtnRiwayatPenyewaan.addActionListener(e);
         BtnLogout.addActionListener(e);
     }
-
+    
     /**
      * Creates new form main_menu
      */
