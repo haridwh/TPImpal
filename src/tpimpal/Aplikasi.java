@@ -1,6 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 package tpimpal;
@@ -12,7 +11,7 @@ import tpimpal.model.Mobil;
 
 /**
  *
- * @author skday
+ * @author User
  */
 public class Aplikasi {
     private ArrayList<Member> listMember;
@@ -23,7 +22,7 @@ public class Aplikasi {
     
     public void createAkun (Member member){
         listMember.add(member);
-    }
+}
     
     public void addKategori(Kategori kategori){
         listKategori.add(kategori);
